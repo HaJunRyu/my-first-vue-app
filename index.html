@@ -8,28 +8,16 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <style>
       .box {
-        width: 100px;
-        height: 100px;
-      }
-
-      .box--red {
+        width: 200px;
+        height: 150px;
         background-color: red;
-      }
-
-      .box--blue {
-        background-color: blue;
-      }
-
-      .box--gray {
-        background-color: gray;
       }
     </style>
   </head>
   <body>
     <div id="app">
-      <div v-if="colorState === 'red'" class="box box--red"></div>
-      <div v-else-if="colorState === 'blue'" class="box box--blue"></div>
-      <div v-else class="box box--gray"></div>
+      <button @click="toggle">Toggle</button>
+      <div class="box"></div>
     </div>
   </body>
 
@@ -37,7 +25,12 @@
     const vm = new Vue({
       el: '#app',
       data: {
-        colorState: 'bluf',
+        show: true,
+      },
+      methods: {
+        toggle() {
+          this.show = !this.show;
+        },
       },
     });
   </script>
