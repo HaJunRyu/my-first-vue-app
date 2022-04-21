@@ -9,35 +9,32 @@
   </head>
   <body>
     <div id="app">
-      <div class="todos">
-        <div v-for="todo in computedTodos" :key="todo.id">
-          <input type="checkbox" v-model="todo.done" />
-          <span>{{todo.title}}</span>
-        </div>
-      </div>
+      <div>{{msg}}</div>
+      <div>{{reversedMsg}}</div>
     </div>
   </body>
   <script>
     const vm = new Vue({
       el: '#app',
       data: {
-        todos: [{ title: '아침먹기' }, { title: '점심 먹기' }, { title: '저녁 먹기' }],
+        msg: 'Hello Vue!',
       },
       computed: {
-        computedTodos: {
+        reversedMsg: {
           get() {
-            return this.todos.map((todo, index) => {
-              return { ...todo, id: index + 1, done: false };
-            });
+            return this.msg.split('').reverse().join('');
           },
-          set(newTodos) {
-            this.todos = newTodos;
+          set(newMsg) {
+            this.msg = newMsg;
           },
         },
       },
-      methods: {
-        changeClassName() {
-          this.className = 'active';
+      watch: {
+        msg(newMsg) {
+          console.log('New Data: ' + newMsg);
+        },
+        reversedMsg(newMsg) {
+          console.log('new reversedMsg: ' + newMsg);
         },
       },
     });
