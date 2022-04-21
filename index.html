@@ -34,6 +34,12 @@
       updated() {
         console.log('updated!', this.$refs.testEl.innerText);
       },
+      beforeDestroy() {
+        console.log('beforeDestroy!');
+      },
+      destroyed() {
+        console.log('destroyed!');
+      },
     });
   </script>
 </html>
