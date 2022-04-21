@@ -8,14 +8,32 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
   <body>
-    <div id="app"><div :class="className" @click="changeClassName">{{msg}}</div></div>
+    <div id="app">
+      <div class="todos">
+        <div v-for="todo in computedTodos" :key="todo.id">
+          <input type="checkbox" v-model="todo.done" />
+          <span>{{todo.title}}</span>
+        </div>
+      </div>
+    </div>
   </body>
   <script>
     const vm = new Vue({
       el: '#app',
       data: {
-        msg: 'Hello Vue!',
-        className: 'normal',
+        todos: [{ title: '아침먹기' }, { title: '점심 먹기' }, { title: '저녁 먹기' }],
+      },
+      computed: {
+        computedTodos: {
+          get() {
+            return this.todos.map((todo, index) => {
+              return { ...todo, id: index + 1, done: false };
+            });
+          },
+          set(newTodos) {
+            this.todos = newTodos;
+          },
+        },
       },
       methods: {
         changeClassName() {
