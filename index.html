@@ -8,37 +8,19 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
   <body>
-    <div id="app"><div ref="testEl">{{msg}}</div></div>
+    <div id="app"><div :class="className" @click="changeClassName">{{msg}}</div></div>
   </body>
   <script>
     const vm = new Vue({
       el: '#app',
       data: {
         msg: 'Hello Vue!',
+        className: 'normal',
       },
-      beforeCreate() {
-        console.log('beforeCreate!');
-      },
-      created() {
-        console.log('created!');
-      },
-      beforeMount() {
-        console.log('beforeMount!');
-      },
-      mounted() {
-        console.log('mounted!');
-      },
-      beforeUpdate() {
-        console.log('beforeUpdate!', this.$refs.testEl.innerText);
-      },
-      updated() {
-        console.log('updated!', this.$refs.testEl.innerText);
-      },
-      beforeDestroy() {
-        console.log('beforeDestroy!');
-      },
-      destroyed() {
-        console.log('destroyed!');
+      methods: {
+        changeClassName() {
+          this.className = 'active';
+        },
       },
     });
   </script>
