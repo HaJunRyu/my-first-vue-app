@@ -1,0 +1,31 @@
+{
+  "name": "my-first-vue-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HaJunRyu/my-first-vue-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HaJunRyu/my-first-vue-app/issues"
+  },
+  "homepage": "https://github.com/HaJunRyu/my-first-vue-app#readme",
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "vue": "^2.6.14"
+  },
+  "devDependencies": {
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.8.1",
+    "webpack-merge": "^5.8.0"
+  }
+}
