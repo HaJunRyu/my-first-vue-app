@@ -41,8 +41,8 @@ import cloneDeep from 'lodash/cloneDeep';
 import find from 'lodash/find';
 import assign from 'lodash/assign';
 import forEachRight from 'lodash/forEachRight';
-import TodoCreator from './TodoCreator';
-import TodoItem from './TodoItem';
+import TodoCreator from '~/components/TodoCreator';
+import TodoItem from '~/components/TodoItem';
 
 export default {
   components: {
