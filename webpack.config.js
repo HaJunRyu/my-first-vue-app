@@ -8,12 +8,11 @@ module.exports = (env, opts) => {
   const config = {
     resolve: {
       extensions: ['.vue', '.js'],
+      fallback: { crypto: false },
     },
-    // 진입정
     entry: {
       bundle: path.join(__dirname, 'main.js'),
     },
-    // 결과물에 대한 설정
     output: {
       filename: '[name].js',
       path: path.join(__dirname, 'dist'),
@@ -56,7 +55,7 @@ module.exports = (env, opts) => {
   } else {
     return merge(config, {
       devtool: 'cheap-module-source-map',
-      plugin: [new CleanWebpackPlugin()],
+      plugins: [new CleanWebpackPlugin()],
     });
   }
 };

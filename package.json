@@ -21,6 +21,9 @@
   "homepage": "https://github.com/HaJunRyu/my-first-vue-app#readme",
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
+    "crypto-random-string": "^3.0.1",
+    "lodash": "^4.17.21",
+    "lowdb": "^1.0.0",
     "vue": "^2.6.14"
   },
   "devDependencies": {
@@ -29,6 +32,7 @@
     "autoprefixer": "^10.4.4",
     "babel-loader": "^8.2.5",
     "clean-webpack-plugin": "^4.0.0",
+    "crypto-browserify": "^3.12.0",
     "css-loader": "^3.6.0",
     "html-webpack-plugin": "^5.5.0",
     "node-sass": "^7.0.1",
