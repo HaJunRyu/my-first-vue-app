@@ -8,7 +8,9 @@ module.exports = (env, opts) => {
   const config = {
     resolve: {
       extensions: ['.vue', '.js'],
-      fallback: { crypto: false },
+      alias: {
+        '~': path.join(__dirname),
+      },
     },
     entry: {
       bundle: path.join(__dirname, 'main.js'),
