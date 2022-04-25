@@ -2,23 +2,14 @@
   <section class="home">
     <div>
       <h1>Hajun's Home Page!</h1>
-      <h2><a @click.prevent="toAbout">About</a></h2>
-      <h2><a @click.prevent="toTodoApp">Todo App</a></h2>
+      <h2><router-link to="/about">About</router-link></h2>
+      <h2><router-link to="/todos">Todo App</router-link></h2>
     </div>
   </section>
 </template>
 
 <script>
-export default {
-  methods: {
-    toAbout() {
-      this.$router.push('/about');
-    },
-    toTodoApp() {
-      this.$router.push('/todos');
-    },
-  },
-};
+export default {};
 </script>
 
 <style lang="scss" scoped>
