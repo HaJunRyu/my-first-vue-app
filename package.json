@@ -21,7 +21,6 @@
   "homepage": "https://github.com/HaJunRyu/my-first-vue-app#readme",
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
-    "crypto-random-string": "^3.0.1",
     "lodash": "^4.17.21",
     "lowdb": "^1.0.0",
     "vue": "^2.6.14"
